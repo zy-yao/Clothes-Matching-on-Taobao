@@ -6,6 +6,8 @@
 3. This work started in November 2017 and was carried out in 5 stages (including (1) python, database related knowledge learning; (2) machine learning basic algorithms, integrated learning; (3) pandas, sklearn; (4) data division, feature extraction ; (5) Prediction, data set division, model optimization, etc., systematically studied the data analysis, which lasted 7 months, the total code volume of Java, Python, Weka, etc. is about 1500 lines.
 
 ## Summary
-### Analyze and model more than 1.837 million Taobao desensitization data by Java and Python. 
-#### Thoughtful feature engineering is deployed, constructing multiple rules and comparing the results of decision trees C4.5, Bayesian, KNN and TF-IDF. 
-#### Finally, results are gotten by merging models.
+1. Analyze and model more than 1.837 million Taobao desensitization data by Java and Python. 
+
+2. Thoughtful feature engineering is deployed, constructing multiple rules and comparing the results of decision trees C4.5, Bayesian, KNN and TF-IDF. 
+
+3. Finally, results are gotten by merging models.
