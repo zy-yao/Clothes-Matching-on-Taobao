@@ -13,7 +13,7 @@ public class Main {
                 new FileInputStream(filename)));
         String line =r1.readLine();
         if(linen<0 || linen > getlines(filename)){
-            System.out.print("行数超出范围\n"+linen);
+            System.out.print("Lines out of boundary!\n"+linen);
         }
         int num = 0;
         String back=new String("1");
@@ -48,7 +48,7 @@ public class Main {
 
             String content = "item_id item_list\n";
 
-            File file = new File("/Users/YAO/.spyder-py3/atest/精选小数据集输出改.txt");
+            File file = new File("/Users/YAO/.spyder-py3/atest/selected_small_dataset.txt");
 
             // if file doesnt exists, then create it
             if (!file.exists()) {
@@ -75,8 +75,8 @@ public class Main {
                     }
                 }
             }
-            System.out.println("cun1判断的数量"+c);
-            System.out.println("写入完成，cun1.size="+cun1.size());
+            System.out.println("cun1_number"+c);
+            System.out.println("write compeleted，cun1.size="+cun1.size());
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -85,23 +85,23 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 	// write your code here
-        String filename = "/Users/YAO/.spyder-py3/atest/待预测商品列表test_items（new).txt";//del 小
+        String filename = "/Users/YAO/.spyder-py3/atest/predects_list_test_items（new).txt";//del 小
         int alines = getlines(filename);
         int linen =2;
         ArrayList dc = new ArrayList();//dc=待测ID
         while(linen <= alines) {
             String ss= readline(filename, linen++);
             dc.add(ss);
-            if((linen>=1000) && (linen%1000==0)) System.out.println("待预测数据读取到第["+linen+"]行");
+            if((linen>=1000) && (linen%1000==0)) System.out.println("Predects_list No.["+linen+"]");
         }
 
         //repeat
-        filename = "/Users/YAO/.spyder-py3/atest/商品信息dim_items（new).txt";//
-        //文件总行数
+        filename = "/Users/YAO/.spyder-py3/atest/Dim_items（new).txt";//
+        //No. of the files
         alines = getlines(filename);
 
 
-        //指定行号码
+        //manually choose a line number
         linen = 2;
 
         ArrayList<D> list1 = new ArrayList();
@@ -120,23 +120,23 @@ public class Main {
             for(i=0;i<dc.size();i++){
                 if(d.ID.equals(dc.get(i))){
                     d.f=1;
-                    //System.out.println("读到需要比较的数，在list1中第【"+i+"]ID="+d.ID);
+                   
                 }}
             i=0;
             list1.add(d);
             if((linen>=1000) && (linen%1000==0)) {
-                System.out.println("总数据读取到第[" + linen + "]行");
+                System.out.println("All_data Line No.[" + linen + "]");
             }
         }
         i=0;
-        int t=0,count=0,n=0,m=0,tt=0;//i为需要比较的那一行
-        //记录每一条待测ID分词与其他行数据相同的个数
+        int t=0,count=0,n=0,m=0,tt=0;//i is the line to be compared
+        //Record the number of ID tokens to be tested equal to other rows
         while(i<list1.size()){
             if(list1.get(i).f==1) {
-                //!System.out.println("找到标记ID="+list1.get(i).ID);
+                //!System.out.println("Found marked ID="+list1.get(i).ID);
                 tt++;
                 for (t=0; t < list1.size(); t++) {
-                    //比较分词相同的个数
+                    //Compare the same number of participles
                     list1.get(t).count=0;
                     for (n=0; n < list1.get(i).fc.size(); n++) {
                         for (m=0; m < list1.get(t).fc.size(); m++) {
@@ -151,7 +151,7 @@ public class Main {
                 Cun cc=new Cun();
                 cc.ID=list1.get(i).ID;
                 list2.addAll(list1);
-                //按照某列排序
+                //Sort by a column
                 myc mc = new myc();
                 Collections.sort(list2, mc);
 
@@ -166,8 +166,8 @@ public class Main {
             i++;
 
         }
-        System.out.println("共比较了"+tt+"个数字");
-        System.out.println("！写入ID的数量:"+cun1.size());
+        System.out.println("compared numbers are"+tt);
+        System.out.println("Number of written IDs:"+cun1.size());
         write(dc, cun1);
     }
     }
