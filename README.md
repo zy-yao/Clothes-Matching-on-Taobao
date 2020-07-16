@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/license-Apache%202-blue)
+
 ## [Clothes-Matching-on-Taobao](https://tianchi.aliyun.com/competition/entrance/231575/introduction "Tianchi")
 1. This project focuses on specific big data application scenarios in the field of e-commerce, digs out the connections of categories in Taobao’s purchase record data, and finds the specific relationship between items that can be matched according to this, that is, "matchable categories". Category filtering to purchase product data can more efficiently improve the collocation degree between products. At the same time, it is found that in the actual application process, a simple intelligent algorithm cannot meet specific scenarios, and rules and algorithms need to be used together.
 
