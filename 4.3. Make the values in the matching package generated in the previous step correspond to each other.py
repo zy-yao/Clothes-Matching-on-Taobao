@@ -16,5 +16,5 @@ with open('dim_fashion_matchsets_remove_coll_id_standard.csv') as origin_f:
                         writer.writerow(line)
                         
 d = pd.read_csv('dim_fashion_matchsets_remove_coll_id_standard_ii.csv')
-d.drop_duplicates(keep='first', inplace=True) #去重，保留第一个重复的
+d.drop_duplicates(keep='first', inplace=True) 
 d.to_csv('dim_fashion_matchsets_remove_coll_id_standard_ii.csv',index = False)
